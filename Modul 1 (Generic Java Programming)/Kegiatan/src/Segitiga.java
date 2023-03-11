@@ -36,22 +36,20 @@ public class Segitiga<T extends Number> {
             System.out.println("\n1. Integer\n2. Double\n3. Keluar\n");
             System.out.print("Masukan Pilihan Anda : ");
             int menu = input.nextInt();
+            
+            System.out.print("\nNilai Alas & Tinggi (Berurutan) : ");
 
             switch (menu) {
                 case 1:
-                    System.out.print("\nNilai Alas & Tinggi (Berurutan) : ");
-                    int alasInt = input.nextInt();
-                    int tinggiInt = input.nextInt();
+                    int alasInt = input.nextInt(); int tinggiInt = input.nextInt();
 
                     Segitiga<Integer> luasTipeInt = new Segitiga<>(alasInt, tinggiInt);
 
-                    System.out.println("Luas Segitiga dalam Integer\t:" + luasTipeInt.getResultAsInt());
+                    System.out.println("Luas Segitiga dalam Integer\t: " + luasTipeInt.getResultAsInt());
                     nextPilih(); break;
 
                 case 2:
-                    System.out.print("\nNilai Alas & Tinggi (Berurutan) : ");
-                    double alasDouble = input.nextDouble();
-                    double tinggiDouble = input.nextDouble();
+                    double alasDouble = input.nextDouble(); double tinggiDouble = input.nextDouble();
 
                     Segitiga<Double> luasTipeDouble = new Segitiga<>(alasDouble, tinggiDouble);
 
@@ -59,15 +57,15 @@ public class Segitiga<T extends Number> {
                     nextPilih(); break;
 
                 case 3:
-                    System.out.println("\nKeluar Makaseh");
+                    System.out.println("\nKeluar Mas");
                     System.exit(0); break;
 
                 default:
-                    System.out.println("\nMohon Maaf Pilihan Anda Salah!\n");
+                    System.out.println("\nMohon Maaf, Pilihan Anda Salah!\n");
                     menuPilih();
             }
         } catch (Exception e) {
-            System.out.println("\nMohon Maaf Input Anda Tidak Valid!");
+            System.out.println("\nMohon Maaf, Inputan Anda Tidak Valid!");
             menuPilih();
         }
     }
@@ -84,7 +82,7 @@ public class Segitiga<T extends Number> {
             input.close();
             System.exit(0);
         } else {
-            System.out.println("Pilihan Salah, Ulang!");
+            System.out.println("Pilihan Salah, Tolong Input Ulang!");
             nextPilih();
         }
     }
