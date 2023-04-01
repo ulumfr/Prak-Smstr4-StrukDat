@@ -5,16 +5,17 @@ public class Keg1 {
         int jumlahBebek = 0;
 
         ArrayList<String> namaHewan = new ArrayList<>();
-        namaHewan.add("Angsa");
-        namaHewan.add("Bebek");
-        namaHewan.add("Cicak");
-        namaHewan.add("Domba");
-        namaHewan.add("Elang");
-        namaHewan.add("Gajah");
+        namaHewan.add(0,"Angsa");
+        namaHewan.add(1,"Bebek");
+        namaHewan.add(2,"Cicak");
+        namaHewan.add(3,"Domba");
+        namaHewan.add(4,"Elang");
+        namaHewan.add(5,"Gajah");
+        System.out.println("Output Awal\t\t: " + namaHewan);
 
         namaHewan.add("Badak");
         namaHewan.add("Bebek");
-        System.out.println("Output\t\t\t: " + namaHewan);
+        System.out.println("\nOutput\t\t\t: " + namaHewan);
         System.out.printf("Posisi Index Bebek\t: ");
         for (int i = 0; i < namaHewan.size(); i++) {
             if (namaHewan.get(i).equals("Bebek")) {

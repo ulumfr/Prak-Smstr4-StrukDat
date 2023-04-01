@@ -9,52 +9,57 @@ class Node {
 }
 
 class LinkedList {
-    Node head;
+    Node awal;
+    Node akhir;
 
     public LinkedList() {
-        head = null;
+        awal = null;
+        akhir = null;
     }
 
-    public void addNode(int value) {
-        Node newNode = new Node(value);
- 
-        if (head == null) {
-            head = newNode;
-            return;
-        }
+    public void tambahNode(int data) {
+        Node nodeBaru = new Node(data);
 
-        Node current = head;
-        while (current.next != null) {
-            current = current.next;
+        if (awal == null) {
+            awal = nodeBaru;
+            akhir = nodeBaru;
+        } else {
+            akhir.next = nodeBaru;
+            akhir = nodeBaru;
         }
-        current.next = newNode;
     }
 
-    public void sortList() {
+    public void urutNode() {
+        Node current = awal, index = null;
+        int temp;
 
-        if (head == null || head.next == null) {
+        if (awal == null) {
             return;
-        }
+        } else {
+            while (current != null) {
+                index = current.next;
 
-        Node current = head;
-        while (current != null) {
-            Node min = current;
-            Node innerCurrent = current.next;
-            while (innerCurrent != null) {
-                if (innerCurrent.data < min.data) {
-                    min = innerCurrent;
+                while (index != null) {
+                    if (current.data > index.data) {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
                 }
-                innerCurrent = innerCurrent.next;
+                current = current.next;
             }
-            int temp = current.data;
-            current.data = min.data;
-            min.data = temp;
-            current = current.next;
         }
     }
 
-    public void printList() {
-        Node current = head;
+    public void displayOutput() {
+        Node current = awal;
+
+        if (awal == null) {
+            System.out.println("List tidak ada");
+            return;
+        }
+
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
@@ -67,19 +72,19 @@ public class Keg2 {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
 
-        list.addNode(7);
-        list.addNode(1);
-        list.addNode(4);
-        list.addNode(6);
-        list.addNode(2);
-        list.addNode(3);
+        list.tambahNode(7);
+        list.tambahNode(1);
+        list.tambahNode(4);
+        list.tambahNode(6);
+        list.tambahNode(2);
+        list.tambahNode(3);
 
-        System.out.print("Original: ");
-        list.printList();
+        System.out.print("Before\t: ");
+        list.displayOutput();
 
-        list.sortList();
+        list.urutNode();
 
-        System.out.print("Sorting: ");
-        list.printList();
+        System.out.print("After\t: ");
+        list.displayOutput();
     }
 }
