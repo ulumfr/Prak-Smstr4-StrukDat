@@ -32,6 +32,4 @@ public class Keg1 {
         System.out.println("Reversed\t: " + reversed);
         input.close();
     }
-
-    
 }
