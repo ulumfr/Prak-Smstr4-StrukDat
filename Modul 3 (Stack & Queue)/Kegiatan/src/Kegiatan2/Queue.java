@@ -30,13 +30,15 @@ public class Queue {
     }
 
     public void dequeue() {
-        if (head == null)
+        if (head == null){
             return;
+        }
 
         head = head.next;
 
-        if (head == null)
+        if (head == null){
             tail = null;
+        }
     }
 
     String peek() {
