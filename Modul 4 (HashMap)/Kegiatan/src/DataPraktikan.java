@@ -183,7 +183,6 @@ public class DataPraktikan {
                     exit = true;
                     System.out.println("\n\nKeluar... Terima Kasih\n");
                     awal();
-                    input.close();
                     break;
 
                 case 1:
