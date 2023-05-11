@@ -78,8 +78,9 @@ public class DataPraktikan {
         System.out.println("\nData Nama Asisten Berhasil diubah.");
     }
 
-    public void tambahAkun(String emailAkun, String passwordAkun){
+    public boolean tambahAkun(String emailAkun, String passwordAkun){
         tabelSesiLogin.put(emailAkun, passwordAkun);
+        return true;
     }
 
     public void daftar(){
