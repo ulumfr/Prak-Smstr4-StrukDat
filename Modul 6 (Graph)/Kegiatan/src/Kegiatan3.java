@@ -56,18 +56,12 @@ class Graph {
     }
 
     public void traverseGraph(int option, int startVertex) {
-        switch (option) {
-            case 1:
-                System.out.print("Hasil BFS\t: ");
-                BFS(startVertex);
-                break;
-            case 2:
-                System.out.print("Hasil DFS\t: ");
-                DFS(startVertex);
-                break;
-            default:
-                System.out.println("Pilihan Tidak Valid.");
-                break;
+        if (option == 1){
+            System.out.print("Hasil BFS\t: ");
+            BFS(startVertex);
+        }else if (option == 2){
+            System.out.print("Hasil DFS\t: ");
+            DFS(startVertex);
         }
     }
 }
@@ -92,9 +86,9 @@ public class Kegiatan3 {
         graph.addEdge(9, 8);
         graph.addEdge(8, 9);
         graph.addEdge(7, 11);
-        graph.addEdge(11, 7);
+        graph.addEdge(11,7);
         graph.addEdge(8, 11);
-        graph.addEdge(11, 10);
+        graph.addEdge(11,10);
 
         int option = 0;
 
